@@ -1,0 +1,30 @@
+h3 {
+	color: blue;
+}
+
+.l-container {
+    max-width: 400px;
+    margin: 10% auto;
+}
+
+select {
+  	width: 150px;
+  	padding: 2px;
+  	border: 1px solid #b6b5b5;
+  	color: #757373;
+}
+
+#resultDiv {
+    margin-top: 50px;
+}
+
+#decideButton {
+    width: 10em;
+    height: 3em;
+}
+
+#result {
+    margin-top: 20px;
+    color:brown;
+    font-size: 30px;
+}
