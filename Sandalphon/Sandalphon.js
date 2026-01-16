@@ -36,9 +36,11 @@ window.onload = function() {
     opt2.value = '11';
     select.appendChild(opt2);
     div.appendChild(select);
+    alert("読み込んだよ");
 }
 
 addButton.addEventListener('click', () => {
+    alert("osita");
     // 追加したい要素
     let followerID = list.children.length + 1;
     let div = document.createElement('div');
@@ -115,4 +117,5 @@ decideButton.addEventListener('click', () => {
     el.textContent = String(sandalphon.calcProb() * 100) + '%';
 
 });
+
 
