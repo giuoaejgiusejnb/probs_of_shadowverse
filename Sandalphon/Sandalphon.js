@@ -1,5 +1,5 @@
 alert("san");
-import { ProbsOfRandomDamagesHit } from "../javascript_files/ProbsOfRandomDamagesHit";
+//import { ProbsOfRandomDamagesHit } from "../javascript_files/ProbsOfRandomDamagesHit";
 
 class Sandalphon extends ProbsOfRandomDamagesHit {
     constructor(leaderDefense, followerDefenses) {
@@ -115,3 +115,4 @@ decideButton.addEventListener('click', () => {
     el.textContent = String(sandalphon.calcProb() * 100) + '%';
 
 });
+
