@@ -1,4 +1,5 @@
-// import { repetitionCombination } from "repetitionCombination";
+alert("hello");
+import { repetitionCombination } from "repetitionCombination.js";
 
 // フォロワーやリーダーにランダム打点を飛ばすとき，指定したフォロワーやリーダーに指定した回数打点が飛ぶ確率を求めるクラス
 // 以下，フォロワーとリーダーをまとめてオブジェクトと呼ぶ
@@ -98,5 +99,6 @@ class ProbsOfRandomDamagesHit {
 
 
 export {ProbsOfRandomDamagesHit};
+
 
 
