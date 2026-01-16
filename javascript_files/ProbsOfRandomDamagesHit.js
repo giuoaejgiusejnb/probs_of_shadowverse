@@ -36,14 +36,14 @@ class ProbsOfRandomDamagesHit {
             let curDefenses = structuredClone(this.defenses); // オブジェクトの現在の体力
             let hitNumArray = Array(n).fill(0); // 各オブジェクトに当たった回数
             let flag1 = 1; // 起こり得る当たり方がどうか
-            let flag2 = 1; // 条件を満たす当たり方がどうか
+            let flag2 = 0; // 条件を満たす当たり方がどうか
             for ( var j = 0; j<this.hitNum; j++) { // ランダム打点をthis.hitnum回当てて，当たったオブジェクトの体力を減らす
                 let targetID = targetIdArray[j] - 1; // 今回当たるオブジェクトのID
                 hitNumArray[targetID] += 1;
                 if (targetID < this.leaderDefenses.length) { // リーダーに当たった場合，リーダーが倒れたところまでの配列を取り出す
                     curDefenses[targetID] -= 2;
                     if (curDefenses[0] <= 0) {
-                        array = targetIdArray.slice(0, j+1); // このようにすると重複が発生するので，後で重複を消す
+                        targetIdArray = targetIdArray.slice(0, j+1); // このようにすると重複が発生するので，後で重複を消す
                         break
                     }
                 } else { // フォロワーに当たった場合，すでに倒れているフォロワーだったら，そのような当て方は存在しない
@@ -56,6 +56,7 @@ class ProbsOfRandomDamagesHit {
             }
 
             if (flag1) { // 在り得る当たり方なら条件を満たす当たり方がチェック
+                flag2 = 1;
                 for ( var j = 0; j<this.array.length; j++) {
                     if (hitNumArray[this.array[j][0]] < this.array[j][1]) {
                         flag2 = 0;
@@ -65,7 +66,7 @@ class ProbsOfRandomDamagesHit {
             }
 
             if (flag2) { // 条件を満たす当たり方ならsuccessfulTargetIdArraysに追加
-                successfulTargetIdArrays.push(array);
+                successfulTargetIdArrays.push(targetIdArray);
             }
         }
         // 重複を除く
@@ -98,6 +99,7 @@ class ProbsOfRandomDamagesHit {
 
 
 export {ProbsOfRandomDamagesHit};
+
 
 
 
