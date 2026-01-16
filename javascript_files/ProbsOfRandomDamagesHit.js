@@ -38,7 +38,7 @@ class ProbsOfRandomDamagesHit {
             let flag1 = 1; // 起こり得る当たり方がどうか
             let flag2 = 1; // 条件を満たす当たり方がどうか
             for ( var j = 0; j<this.hitNum; j++) { // ランダム打点をthis.hitnum回当てて，当たったオブジェクトの体力を減らす
-                targetID = targetIdArray[j] - 1; // 今回当たるオブジェクトのID
+                let targetID = targetIdArray[j] - 1; // 今回当たるオブジェクトのID
                 hitNumArray[targetID] += 1;
                 if (targetID < this.leaderDefenses.length) { // リーダーに当たった場合，リーダーが倒れたところまでの配列を取り出す
                     curDefenses[targetID] -= 2;
@@ -98,6 +98,7 @@ class ProbsOfRandomDamagesHit {
 
 
 export {ProbsOfRandomDamagesHit};
+
 
 
 
