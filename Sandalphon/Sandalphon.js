@@ -1,4 +1,3 @@
-alert("abc");
 import { ProbsOfRandomDamagesHit } from "../javascript_files/ProbsOfRandomDamagesHit.js";
 
 class Sandalphon extends ProbsOfRandomDamagesHit {
@@ -111,12 +110,13 @@ decideButton.addEventListener('click', () => {
         return
     }
 
-    let sandalphon = Sandalphon(leaderDefense, followerDefenses);
+    let sandalphon = new Sandalphon(leaderDefense, followerDefenses);
 
     // 確率を表示する
     el.textContent = String(sandalphon.calcProb() * 100) + '%';
 
 });
+
 
 
 
