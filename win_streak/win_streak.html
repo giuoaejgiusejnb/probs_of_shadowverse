@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset='UTF-8'>
+	    <title>連勝確率計算</title>
+        <link rel="stylesheet" href="../css/contents.css">
+    </head>
+
+    <body>
+        <p>
+            勝率<input type="number" min="0" max="100" id="win_rate" step="any" style="width: 100px" required>%で，
+            <input type="number" id="n" min="0" step="1" style="width: 50px" required>回戦ったとき，
+            <input type="number" id="m" min="0" step="1" style="width: 50px" required>回以上連勝する確率を計算します
+        </p>
+
+        <div id='resultDiv'>
+            <button id='decideButton'>決定</button>
+            <p id='result'></p>
+        </div>
+
+        <p><a href="../index.html">トップへ</a></p>
+
+        <script type="module" src="win__streak.js"></script>
+    </body>
+</html>
