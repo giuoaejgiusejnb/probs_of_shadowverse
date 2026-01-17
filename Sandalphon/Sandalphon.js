@@ -111,16 +111,5 @@ decideButton.addEventListener('click', () => {
     let sandalphon = new Sandalphon(leaderDefense, followerDefenses);
 
     // 確率を表示する
-    el.textContent = String(sandalphon.calcProb() * 100) + '%';
-
+    el.textContent = String(sandalphon.calcProb()[0] * 100) + '%';
 });
-
-
-
-
-
-
-
-
-
-
