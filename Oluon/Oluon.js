@@ -15,7 +15,7 @@ const list = document.getElementById('myList');
             
 window.onload = function() {
     for ( var i=0; i<2; i++ ) {
-        const div = document.getElementById(["you", "opponent"]);
+        const div = document.getElementById(["you", "opponent"][i]);
         let select = document.createElement('select');
 
         select.id = "select" + String(i);
@@ -118,4 +118,5 @@ decideButton.addEventListener('click', () => {
     // 確率を表示する
     el1.textContent = `自分リーダーがリーサルを取られる確率：${results[0]*100}%`;
     el2.textContent = `相手リーダーがリーサルを取られる確率：${results[1]*100}%`;
+
 });
