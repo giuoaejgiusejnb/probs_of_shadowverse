@@ -28,3 +28,7 @@ select {
     color:brown;
     font-size: 30px;
 }
+
+input:invalid {
+    background-color:  red;
+}
