@@ -16,11 +16,16 @@ decideButton.addEventListener('click', () => {
 });
 
 function winStreak(p, n, m) {
-    if (n < m) {
-        return 0;
-    }else if (n == m){
-        return p**m;
-    }else{
-        return winStreak(p, n-1, m) + (1 - winStreak(p, n-m-1, m))*(1-p)*p**m;
+    const dp = [];
+    for ( var i=0; i<n+1; i++) {
+        if (i < m) {
+            dp.push(0);
+        }else if (i == m){
+            dp.push(p**m);
+        }else{
+            dp.push(dp[i-1] + (1 - dp[i-m-1])*(1-p)*p**m);
+        }
     }
+
+    return dp[n];
 }
